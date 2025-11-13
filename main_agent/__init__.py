@@ -1,4 +1,4 @@
-from .agent import root_agent, analyzer_agent, recommender_agent
+from .entrypoint import root_agent, analyzer_agent, recommender_agent
 from .agents import analyzer_agent as agents_analyzer, recommender_agent as agents_recommender, root_agent as agents_root
 from .prompts import (
     ORCHESTRATOR_AGENT_INSTRUCTION,

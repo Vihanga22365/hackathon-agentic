@@ -12,6 +12,7 @@ ANALYZER_AGENT_INSTRUCTION = """
         - Analyze the retrieved data to identify patterns in the user's travel history and preferences.
         - Summarize your findings and prepare a report that highlights key insights about the user's travel behavior.
         - Pass this report back to the Orchestrator Agent for further processing and recommendation generation.
+        - Make sure don't give any output directly to the user. After calling both tools don't wait ot give output. Pass all data to Orchestrator Agent.
     </instructions>
 
     <tools>
