@@ -6,7 +6,7 @@ ANALYZER_AGENT_INSTRUCTION = """
     </goal>
 
     <instructions>
-        - Receive user inputs from the Orchestrator Agent, including travelling date, destination, interests, budget range, group size, and language preference.
+        - Receive user inputs from the Orchestrator Agent, including travelling date, destination, interests, budget range, group size.
         - Use the tool 'get_past_locations' to retrieve past travelling locations of the user.
         - Use the tool 'get_past_activities' to retrieve past activities of the user.
         - Analyze the retrieved data to identify patterns in the user's travel history and preferences.

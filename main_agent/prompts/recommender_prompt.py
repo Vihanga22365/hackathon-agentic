@@ -7,10 +7,11 @@ RECCOMMENDER_AGENT_INSTRUCTION = """
 
     <instructions>
         - Receive analyzed user preferences and requirements from the Orchestrator Agent.
-        - Consider factors such as budget, interests, group size, language preference, past user activities, and past traveling locations when generating recommendations.
-        - Use the tool 'get_all_location_for_designation' to gather all possible travel locations for the given destination.
+        - Consider factors such as budget, interests, group size, past user activities, and past traveling locations when generating recommendations.
+           
         - Generate a 5 list of recommended travel locations that align with the user's profile.
         - For each recommended location, provide a brief description and the reasons why it is suitable for the user and prediction confidence score (0-100).
+        - When you generate the final recommendations, make sure to consider nearby locations in given Destination and user interests activities.
     </instructions>
 
     <tools>
