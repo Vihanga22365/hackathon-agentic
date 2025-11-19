@@ -4,6 +4,7 @@ from google.adk.models.lite_llm import LiteLlm
 from dotenv import load_dotenv
 from ..prompts.recommender_prompt import RECCOMMENDER_AGENT_INSTRUCTION, RECCOMMENDER_AGENT_DESCRIPTION
 from google.adk.tools.mcp_tool.mcp_toolset import MCPToolset, StreamableHTTPConnectionParams
+from google.genai import types
 
 load_dotenv()
 
@@ -24,4 +25,7 @@ recommender_agent = LlmAgent(
             tool_filter=['get_all_location_for_designation']
         )
     ],
+    generate_content_config=types.GenerateContentConfig(
+        temperature=0.0,
+    ),
 )

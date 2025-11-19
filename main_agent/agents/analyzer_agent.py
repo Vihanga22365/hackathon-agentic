@@ -4,6 +4,7 @@ from google.adk.models.lite_llm import LiteLlm
 from dotenv import load_dotenv
 from google.adk.tools.mcp_tool.mcp_toolset import MCPToolset, StreamableHTTPConnectionParams
 from ..prompts.analyzer_prompt import ANALYZER_AGENT_INSTRUCTION, ANALYZER_AGENT_DESCRIPTION
+from google.genai import types
 
 load_dotenv()
 
@@ -22,6 +23,9 @@ analyzer_agent = LlmAgent(
             tool_filter=['get_past_locations', 'get_past_activities']
         )
     ],
+    generate_content_config=types.GenerateContentConfig(
+        temperature=0.0,
+    ),
     instruction=ANALYZER_AGENT_INSTRUCTION,
     description=ANALYZER_AGENT_DESCRIPTION,
 )

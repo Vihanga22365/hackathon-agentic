@@ -8,6 +8,7 @@ from ..analyzer_agent import analyzer_agent
 from ..recommender_agent import recommender_agent
 from .input_handler import InputHandler, process_user_input
 from .agent_dispatcher import AgentDispatcher, dispatch_request, AgentType
+from google.genai import types
 
 load_dotenv()
 
@@ -22,6 +23,9 @@ agent_dispatcher = AgentDispatcher()
 root_agent = LlmAgent(
     name="OrchestratorAgent",
     model=LiteLlm(model="openai/gpt-4.1"),
+    generate_content_config=types.GenerateContentConfig(
+        temperature=0.0,
+    ),
     tools=[
         MCPToolset(
             connection_params=StreamableHTTPConnectionParams(

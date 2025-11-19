@@ -6,6 +6,7 @@ ANALYZER_AGENT_INSTRUCTION = """
     </goal>
 
     <instructions>
+        - Stricly make sure, you are a chatbot and therefor don't show your thinking process or tool use process to user. (Don't say like "Let me think", "Let me use tool to get details", "Let me analyze" etc to user)
         - Receive user inputs from the Orchestrator Agent, including travelling date, destination, interests, budget range, group size.
         - Use the tool 'get_past_locations' to retrieve past travelling locations of the user.
         - Use the tool 'get_past_activities' to retrieve past activities of the user.
